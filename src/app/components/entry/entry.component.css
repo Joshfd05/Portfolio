@@ -1,44 +1,110 @@
+/* Dark Theme Hero Section */
 .hero {
-  margin-top: 80px; /*To keep the margn on top with navbar*/
-  width: auto;
+  padding: 100px 10% 80px;
+  background: linear-gradient(135deg, #121212 0%, #00000e 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 10%;
-  background-color: #222;
-  color: white;
+  gap: 50px;
 }
 
-.hero .image-content {
+.image-content {
   flex: 1;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
-.hero .profile-pic {
-  width: 400px;
-  height: 400px;
+.profile-pic {
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
-  border: none;
   object-fit: cover;
+  border: 5px solid rgba(0, 8, 19, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
-.hero .text-content {
+.profile-pic:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(2, 12, 26, 0.5);
+}
+
+.text-content {
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 60px;
-  font-weight: extrabold;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 15px;
-
-  background: linear-gradient(to right, rgb(217, 241, 240), rgb(137, 168, 240)); /* Blue to purple gradient */
-  -webkit-background-clip: text; /* Applies the gradient to the text */
-  color: transparent; /* Makes text color transparent to show the gradient */
+  background: linear-gradient(45deg, #f7f9fa, #22a8cd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #BBBBBB;
+.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #d1d1d1;
+  font-weight: 300;
+}
+
+.hero-decoration {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .hero-decoration {
+    margin: 20px auto 0;
+  }
+  
+  .profile-pic {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+  }
 }
