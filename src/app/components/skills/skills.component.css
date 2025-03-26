@@ -1,59 +1,106 @@
-
 /* Skills Section */
-#skills {
-  padding: 50px 10%;
-  text-align: center;
+.skills-section {
+  margin-top: 20px;
+  padding: 80px 0;
+  background-color: #eceff1;
 }
 
-#skills h2 {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
   font-size: 2.5rem;
-  margin-bottom: 30px;
-  text-align: left;
+  font-weight: 800;
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+               Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(45deg, #011f22, #014d5d, #90e0ef); /* Professional blue gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
 }
 
-.skills-container {
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #014f64, #022b33);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.skills-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(230, 238, 254);
-  padding: 50px;
+  flex-wrap: nowrap;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.skill-box {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
+.skills-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skills-row::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.skills-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  height: 200px;
-  width: 200px;
-  color: #000000;
-  padding: 30px 25px;
-  cursor: pointer;
-  background-color: azure;
-  border-radius: 50px;
+  padding: 90px;
+  gap: 12px;
+  min-width: 80px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.skill-item span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .skills-row {
+    gap: 30px;
+  }
   
-  /*flip effect*/
-  transform-style: preserve-3d;
-  transition: transform .8s ease-in-out;
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skill-item span {
+    font-size: 0.8rem;
+  }
 }
-
-.skill-box:hover {
-  transform: rotateY(180deg);
-}
-
-.skill-box img.skill-icon {
-  width: 90px;
-  height: 90px;
-  margin-bottom: 5px;
-}
-
-.skill-box span {
-  text-align: center;
-  font-size: 1rem;
-}
-
