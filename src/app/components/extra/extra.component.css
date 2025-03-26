@@ -1,0 +1,143 @@
+/* Extra Curricular Section */
+.extra-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    position: relative;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  
+  .section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #021d2c, #34cddb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  .header-decoration {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #44a9ad, #021d2e);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  
+  /* Music Card */
+  .music-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+  }
+  
+  .music-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .music-header h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .music-icon {
+    font-size: 3rem;
+  }
+  
+  .music-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  
+  /* Skill Categories */
+  .music-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .skill-category {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .skill-details {
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .skill-details li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    color: #34495e;
+  }
+  
+  .skill-details li::before {
+    content: "🎶";
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Glass Card Effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2.2rem;
+    }
+    
+    .music-header h3 {
+      font-size: 1.5rem;
+    }
+    
+    .music-skills {
+      grid-template-columns: 1fr;
+    }
+    
+    .music-card {
+      padding: 25px;
+    }
+  }
