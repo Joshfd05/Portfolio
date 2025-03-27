@@ -34,13 +34,19 @@
   color: transparent;
 }
 
-.footer-contact, .footer-email {
+.footer-contact {
   font-size: 1.1rem;
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
 .footer-social {
@@ -50,7 +56,6 @@
 
 .social-link {
   color: #e2e8f0;
-  font-size: 1.5rem;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -87,7 +92,7 @@
     text-align: left;
   }
   
-  .footer-contact, .footer-email {
+  .footer-contact {
     justify-content: flex-start;
   }
 }
