@@ -1,7 +1,7 @@
 /* Dark Mode Projects Section */
 .projects {
   padding: 80px 0;
-  background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #000000 0%, #001c18e0 100%);
 }
 
 .projects h2 {
@@ -25,7 +25,7 @@
 .projects h2::after {
   content: '';
   position: absolute;
-  width: 60%;
+  width: 10%;
   height: 4px;
   background: linear-gradient(90deg, #00d2ff, #3a7bd5);
   bottom: -10px;
