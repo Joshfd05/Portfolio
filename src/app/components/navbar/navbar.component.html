@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <div class="nav-links">
     <ul>
       <li><a href="#entry">Home</a></li>
@@ -7,5 +7,38 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#extra">Extra Curricular</a></li>
     </ul>
+  </div>
+</nav> -->
+
+
+
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <div class="nav-container">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#entry" fragment="home" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" fragment="about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#projects" fragment="projects" class="nav-link">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="#skills" fragment="skills" class="nav-link">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a href="#extra" fragment="extra" class="nav-link">Extra Curricular</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" fragment="contact" class="nav-link contact-btn">Contact</a>
+      </li>
+    </ul>
+    
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <span class="menu-icon" [class.active]="isMenuOpen">☰</span>
+    </button>
   </div>
 </nav>
