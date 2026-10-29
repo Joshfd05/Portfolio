@@ -1,0 +1,48 @@
+---
+import { music, sections } from '../data/portfolio';
+import Panel from './Panel.astro';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<Panel id="music" layer={2}>
+  <div class="px-6 py-20 md:px-12 md:py-28">
+    <SectionHeading {...sections.music} />
+
+    <div class="mx-auto mt-14 grid max-w-5xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+      <p class="text-base leading-relaxed text-ink-soft md:text-lg" data-reveal>{music.intro}</p>
+
+      <ol class="space-y-3">
+        {
+          music.items.map((item) => (
+            <li
+              class:list={[
+                'card rounded-3xl p-6',
+                item.current && 'shadow-[0_1px_2px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(220,185,138,0.3)]',
+              ]}
+              data-reveal
+            >
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                <h3 class="font-medium tracking-tight">{item.title}</h3>
+                <span
+                  class:list={[
+                    'inline-flex items-center gap-1.5 text-xs tabular-nums',
+                    item.current ? 'text-accent' : 'text-muted',
+                  ]}
+                >
+                  {item.current && (
+                    <span class="relative flex size-1.5" aria-hidden="true">
+                      <span class="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-50 motion-reduce:animate-none" />
+                      <span class="relative inline-flex size-1.5 rounded-full bg-accent" />
+                    </span>
+                  )}
+                  {item.period}
+                </span>
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</Panel>

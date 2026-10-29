@@ -1,0 +1,21 @@
+---
+import type { Segment } from '../data/portfolio';
+import TwoTone from './TwoTone.astro';
+
+interface Props {
+  label: string;
+  heading: Segment[];
+}
+
+const { label, heading } = Astro.props;
+---
+
+<div class="mx-auto max-w-4xl text-center" data-reveal>
+  <h2 class="mx-auto max-w-xl text-2xl font-medium tracking-tight text-balance md:text-[2rem] md:leading-tight">
+    <TwoTone segments={heading} />
+  </h2>
+  <div class="relative mt-10 flex items-center justify-center" aria-hidden="true">
+    <span class="absolute inset-x-0 top-1/2 h-px bg-line"></span>
+    <span class="pill relative -rotate-3 cursor-default px-5 text-[0.7rem]">{label}</span>
+  </div>
+</div>

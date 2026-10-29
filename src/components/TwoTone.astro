@@ -1,0 +1,18 @@
+---
+import type { Segment } from '../data/portfolio';
+
+interface Props {
+  segments: Segment[];
+}
+
+const { segments } = Astro.props;
+---
+
+{
+  segments.map((segment, i) => (
+    <>
+      <span class={segment.highlight ? 'text-accent' : undefined}>{segment.text}</span>
+      {i < segments.length - 1 && ' '}
+    </>
+  ))
+}

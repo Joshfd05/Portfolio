@@ -1,0 +1,19 @@
+---
+interface Props {
+  id?: string;
+  tone?: 'surface' | 'panel';
+  /** Higher layers sit on top, so earlier panels must get larger values. */
+  layer: number;
+  class?: string;
+}
+
+const { id, tone = 'surface', layer, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={['panel scroll-mt-4', tone === 'panel' ? 'bg-panel' : 'bg-surface', className]}
+  style={`z-index: ${layer}`}
+>
+  <slot />
+</section>

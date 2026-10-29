@@ -1,0 +1,47 @@
+---
+import { contact, profile, socials } from '../data/portfolio';
+import Icon from './Icon.astro';
+import Panel from './Panel.astro';
+import SocialLinks from './SocialLinks.astro';
+import TwoTone from './TwoTone.astro';
+
+const linkedIn = socials.find((social) => social.label === 'LinkedIn');
+const year = new Date().getFullYear();
+---
+
+<Panel id="contact" tone="panel" layer={1}>
+  <div class="flex flex-col items-center px-6 pt-20 text-center md:pt-28" data-reveal>
+    <div
+      class="card grid size-16 place-items-center rounded-full"
+      aria-hidden="true"
+    >
+      <Icon name="handshake" class="size-7 text-accent" strokeWidth={1.25} />
+    </div>
+
+    <h2 class="mt-7 max-w-lg text-3xl leading-[1.1] font-medium tracking-tight text-balance md:text-5xl">
+      <TwoTone segments={contact.heading} />
+    </h2>
+    <p class="mt-4 max-w-sm text-sm text-muted md:text-base">{contact.intro}</p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href={`mailto:${profile.email}`} class="pill-primary">
+        <Icon name="mail" class="size-4" />
+        Email me
+      </a>
+      {
+        linkedIn && (
+          <a href={linkedIn.href} target="_blank" rel="noopener noreferrer" class="pill px-5 py-2.5 text-sm">
+            LinkedIn
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <footer
+    class="mx-6 mt-24 flex flex-col-reverse items-center gap-3 border-t border-line py-7 text-xs text-muted sm:flex-row sm:justify-between md:mx-12"
+  >
+    <p>© {year} {profile.name}. All rights reserved.</p>
+    <SocialLinks />
+  </footer>
+</Panel>

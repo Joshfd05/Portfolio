@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0c0e" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body class="p-2 sm:p-4 md:p-6">
+    <slot />
+
+    <script>
+      const revealables = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px' },
+      );
+      revealables.forEach((el) => observer.observe(el));
+
+      document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => {
+        const label = button.querySelector('[data-copy-label]');
+        const original = label?.textContent ?? '';
+        button.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copy ?? '');
+            if (label) label.textContent = 'Copied';
+          } catch {
+            if (label) label.textContent = 'Copy failed';
+          }
+          setTimeout(() => {
+            if (label) label.textContent = original;
+          }, 1800);
+        });
+      });
+    </script>
+  </body>
+</html>

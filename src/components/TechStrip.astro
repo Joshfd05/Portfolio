@@ -1,0 +1,25 @@
+---
+import { techStack } from '../data/portfolio';
+import Panel from './Panel.astro';
+---
+
+<Panel tone="panel" layer={7}>
+  <div class="px-6 py-12 md:px-12 md:py-16">
+    <h2 class="sr-only">Technologies I work with</h2>
+    <ul
+      class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 text-ink-soft lg:justify-between lg:gap-x-6"
+      data-reveal
+    >
+      {
+        techStack.map(({ name, icon, color }) => (
+          <li class="flex items-center gap-2 transition hover:text-ink">
+            <svg viewBox="0 0 24 24" class="size-5" fill={color} aria-hidden="true">
+              <path d={icon.path} />
+            </svg>
+            <span class="text-[15px] font-semibold tracking-tight">{name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Panel>

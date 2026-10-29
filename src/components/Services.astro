@@ -1,0 +1,24 @@
+---
+import { sections, services } from '../data/portfolio';
+import Icon from './Icon.astro';
+import Panel from './Panel.astro';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<Panel id="about" layer={6}>
+  <div class="px-6 py-20 md:px-12 md:py-28">
+    <SectionHeading {...sections.services} />
+
+    <ul class="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-10 md:gap-x-8 lg:grid-cols-4">
+      {
+        services.map((service) => (
+          <li data-reveal>
+            <Icon name={service.icon} class="size-6 text-accent" strokeWidth={1.25} />
+            <h3 class="mt-4 text-sm font-medium">{service.title}</h3>
+            <p class="mt-2 max-w-60 text-[13px] leading-relaxed text-muted">{service.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Panel>

@@ -1,0 +1,22 @@
+---
+import { socials } from '../data/portfolio';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ul class:list={['flex items-center gap-2 text-xs text-ink-soft', className]}>
+  {
+    socials.map((social, i) => (
+      <li class="flex items-center gap-2">
+        {i > 0 && <span class="text-muted" aria-hidden="true">/</span>}
+        <a href={social.href} target="_blank" rel="noopener noreferrer" class="transition hover:text-ink">
+          {social.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
