@@ -4,10 +4,10 @@ import {
   siAngular,
   siFirebase,
   siFlutter,
-  siJavascript,
-  siMysql,
+  siGit,
+  siGooglecloud,
   siOpenjdk,
-  siPython,
+  siReact,
   siSpringboot,
   siTypescript,
 } from 'simple-icons';
@@ -96,17 +96,21 @@ export const hero = {
   cta: { label: 'View my work', href: '#work' },
 };
 
-/** `color` is chosen to stay visible on the dark background (some official brand colours are black). */
-export const techStack: { name: string; icon: SimpleIcon; color: string }[] = [
+/**
+ * `icon` is a brand logo from simple-icons, or a line icon name for tech without one (e.g. SQL).
+ * `color` is chosen to stay visible on the dark background (some official brand colours are black).
+ */
+export const techStack: { name: string; icon: SimpleIcon | IconName; color: string }[] = [
   { name: 'Java', icon: siOpenjdk, color: '#ED8B00' },
   { name: 'Spring Boot', icon: siSpringboot, color: '#6DB33F' },
-  { name: 'Python', icon: siPython, color: '#4B8BBE' },
-  { name: 'JavaScript', icon: siJavascript, color: '#F7DF1E' },
+  { name: 'React', icon: siReact, color: '#61DAFB' },
   { name: 'TypeScript', icon: siTypescript, color: '#3178C6' },
   { name: 'Angular', icon: siAngular, color: '#DD0031' },
+  { name: 'SQL', icon: 'database', color: '#7FA7D9' },
+  { name: 'Google Cloud', icon: siGooglecloud, color: '#4285F4' },
   { name: 'Flutter', icon: siFlutter, color: '#47C5FB' },
   { name: 'Firebase', icon: siFirebase, color: '#FFCA28' },
-  { name: 'MySQL', icon: siMysql, color: '#5B9BD5' },
+  { name: 'Git', icon: siGit, color: '#F05032' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -114,14 +118,6 @@ export const techStack: { name: string; icon: SimpleIcon; color: string }[] = [
 /* ------------------------------------------------------------------ */
 
 export const sections = {
-  services: {
-    label: 'What I do',
-    heading: [
-      { text: 'Turning ideas into' },
-      { text: 'reliable, well-crafted', highlight: true },
-      { text: 'software.' },
-    ],
-  },
   experience: {
     label: 'Experience',
     heading: [{ text: 'Where I have' }, { text: 'learned on the job.', highlight: true }],
@@ -155,11 +151,6 @@ export const services: Service[] = [
     description: 'Responsive web apps with Angular, TypeScript and Spring Boot.',
   },
   {
-    icon: 'server',
-    title: 'Backend & APIs',
-    description: 'Java services with a focus on concurrency, data and clean architecture.',
-  },
-  {
     icon: 'smartphone',
     title: 'Mobile Apps',
     description: 'Cross-platform apps with Flutter and Firebase, from auth to real-time chat.',
@@ -167,7 +158,7 @@ export const services: Service[] = [
   {
     icon: 'music',
     title: 'Music & Performance',
-    description: 'Guitarist, clarinettist and vocalist performing live in Negombo and Colombo.',
+    description: 'Guitarist and vocalist performing live gigs at pubs, hotels, restaurants and events.',
   },
 ];
 
@@ -286,5 +277,6 @@ export const contact = {
     { text: 'something', highlight: true },
     { text: 'together.' },
   ] satisfies Segment[],
-  intro: 'Open to internships, graduate roles and interesting projects.',
+  intro: 'Open to internships and interesting projects.',
+  servicesLabel: 'What I do',
 };

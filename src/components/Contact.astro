@@ -1,6 +1,7 @@
 ---
-import { contact, profile, socials } from '../data/portfolio';
+import { contact, profile, services, socials } from '../data/portfolio';
 import Icon from './Icon.astro';
+import LabelDivider from './LabelDivider.astro';
 import Panel from './Panel.astro';
 import SocialLinks from './SocialLinks.astro';
 import TwoTone from './TwoTone.astro';
@@ -9,21 +10,36 @@ const linkedIn = socials.find((social) => social.label === 'LinkedIn');
 const year = new Date().getFullYear();
 ---
 
-<Panel id="contact" tone="panel" layer={1}>
-  <div class="flex flex-col items-center px-6 pt-20 text-center md:pt-28" data-reveal>
-    <div
-      class="card grid size-16 place-items-center rounded-full"
-      aria-hidden="true"
-    >
-      <Icon name="handshake" class="size-7 text-accent" strokeWidth={1.25} />
+<Panel id="contact" layer={1}>
+  <div class="flex flex-col items-center px-6 pt-20 text-center md:pt-28">
+    <div data-reveal class="flex flex-col items-center">
+      <div class="card grid size-16 place-items-center rounded-full" aria-hidden="true">
+        <Icon name="handshake" class="size-7 text-accent" strokeWidth={1.25} />
+      </div>
+
+      <h2 class="mt-7 max-w-lg text-3xl leading-[1.1] font-medium tracking-tight text-balance md:text-5xl">
+        <TwoTone segments={contact.heading} />
+      </h2>
+      <p class="mt-4 max-w-sm text-sm text-muted md:text-base">{contact.intro}</p>
     </div>
 
-    <h2 class="mt-7 max-w-lg text-3xl leading-[1.1] font-medium tracking-tight text-balance md:text-5xl">
-      <TwoTone segments={contact.heading} />
-    </h2>
-    <p class="mt-4 max-w-sm text-sm text-muted md:text-base">{contact.intro}</p>
+    <div class="mt-14 w-full max-w-4xl">
+      <LabelDivider label={contact.servicesLabel} />
 
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <ul class="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        {
+          services.map((service) => (
+            <li class="flex flex-col items-center" data-reveal>
+              <Icon name={service.icon} class="size-6 text-accent" strokeWidth={1.25} />
+              <h3 class="mt-4 text-sm font-medium">{service.title}</h3>
+              <p class="mt-2 max-w-60 text-[13px] leading-relaxed text-muted">{service.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-14 flex flex-wrap justify-center gap-3" data-reveal>
       <a href={`mailto:${profile.email}`} class="pill-primary">
         <Icon name="mail" class="size-4" />
         Email me
