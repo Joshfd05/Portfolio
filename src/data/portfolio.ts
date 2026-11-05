@@ -9,6 +9,7 @@ import {
   siOpenjdk,
   siReact,
   siSpringboot,
+  siSupabase,
   siTypescript,
 } from 'simple-icons';
 
@@ -42,10 +43,14 @@ export type Experience = {
 
 export type Project = {
   title: string;
+  /** Short context shown above the title, e.g. "Freelance · Web store". */
+  type: string;
   summary: string;
   stack: string[];
   code?: string;
   live?: string;
+  /** Shown in place of links when neither `code` nor `live` is public. */
+  note?: string;
 };
 
 export type Education = {
@@ -107,6 +112,7 @@ export const techStack: { name: string; icon: SimpleIcon | IconName; color: stri
   { name: 'TypeScript', icon: siTypescript, color: '#3178C6' },
   { name: 'Angular', icon: siAngular, color: '#DD0031' },
   { name: 'SQL', icon: 'database', color: '#7FA7D9' },
+  { name: 'Supabase', icon: siSupabase, color: '#3FCF8E' },
   { name: 'Google Cloud', icon: siGooglecloud, color: '#4285F4' },
   { name: 'Flutter', icon: siFlutter, color: '#47C5FB' },
   { name: 'Firebase', icon: siFirebase, color: '#FFCA28' },
@@ -148,12 +154,12 @@ export const services: Service[] = [
   {
     icon: 'monitor',
     title: 'Full-stack Web',
-    description: 'Responsive web apps with Angular, TypeScript and Spring Boot.',
+    description: 'Responsive web apps with React, Angular, TypeScript, Spring Boot and Supabase.',
   },
   {
     icon: 'smartphone',
     title: 'Mobile Apps',
-    description: 'Cross-platform apps with Flutter and Firebase, from auth to real-time chat.',
+    description: 'Cross-platform apps with Flutter and React Native, backed by Firebase or Supabase.',
   },
   {
     icon: 'briefcase',
@@ -186,44 +192,52 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Real-Time Event Ticketing System',
+    title: 'Workloader',
+    type: 'Personal · Web app',
     summary:
-      'Concurrent ticket release and purchase using producer–consumer patterns and multi-threading for safe, scalable resource handling.',
-    stack: ['Angular', 'Spring Boot', 'Java', 'Multi-threading'],
-    code: 'https://github.com/Joshfd05/Real-Time-Event-Ticketing-Handler',
+      'A planner for students and anyone with a busy schedule, well beyond a to-do list. Organise projects or modules into tasks, subtasks and events, with reminders, an integrated calendar and a dashboard showing work left, overdue items and upcoming deadlines. Google sign-in syncs everything to the cloud.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Zustand', 'Supabase'],
+    live: 'https://workloader.vercel.app/',
   },
   {
-    title: 'Roameo Marketing Website',
+    title: 'Flowstock',
+    type: 'Freelance · Client · Mobile app',
     summary:
-      'Responsive marketing and landing site for a travel mobile app, built to promote the product and its services.',
-    stack: ['Angular', 'TypeScript', 'CSS'],
-    code: 'https://github.com/Joshfd05/Roameo-MarketingWeb',
-    live: 'https://roameo.world/',
+      'Operations app for a grocery distributor running two delivery trucks, replacing a manual, phone-based process. The owner manages stock, shops and truck allocations while reps create bills on the road and print them over Bluetooth or Wi-Fi, with live sync and role-based access enforced by row-level security.',
+    stack: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'Zustand'],
+    note: 'Private client project',
   },
   {
-    title: 'Chatlo — Chat App',
-    summary: 'Minimal cross-platform messaging app with user authentication and instant messaging.',
+    title: 'RuuWear',
+    type: 'Freelance · Client · Web store',
+    summary:
+      'Online clothing store for RuuWear, a fashion label launching its debut linen collection. In active development, with the launch page already live.',
+    stack: ['React', 'TypeScript', 'Vite', 'React Router', 'Supabase', 'CSS Modules'],
+    live: 'https://www.ruuwear.lk/',
+  },
+  {
+    title: 'DemoGenie',
+    type: 'Internship · AI workshop',
+    summary:
+      'AI assistant I conceived and built for an internship AI workshop. It turns restaurant merchant bookings into demo prep briefs for sales teams, with business insights, relevant features and tailored pitch ideas, falling back gracefully when the AI is unavailable.',
+    stack: ['Next.js', 'TypeScript', 'FastAPI', 'OpenAI API', 'PostgreSQL'],
+    code: 'https://github.com/Joshfd05/DemoGenie',
+  },
+  {
+    title: 'CalTrackr',
+    type: 'Personal · iOS app',
+    summary:
+      'Calorie and workout tracker built for iPhone. Set calorie-burn goals, follow a 4-day workout rotation and log sets, reps and weights with a session stopwatch, then review progress on an activity heatmap and weekly chart. Works offline and syncs when back online.',
+    stack: ['Flutter', 'Dart', 'Riverpod', 'Firebase Auth', 'Cloud Firestore', 'Codemagic'],
+    note: 'Private project',
+  },
+  {
+    title: 'Chatlo',
+    type: 'University · Mobile app',
+    summary:
+      'One of my first mobile apps, built in second year to learn Flutter end to end: a cross-platform messaging app with user authentication and real-time chat.',
     stack: ['Flutter', 'Dart', 'Firebase'],
     code: 'https://github.com/Joshfd05/Chatlo',
-  },
-  {
-    title: 'Student Management System',
-    summary:
-      'Java application for student registration, grade tracking and report generation, built around solid OOP design.',
-    stack: ['Java', 'OOP'],
-    code: 'https://github.com/Joshfd05/University-Student-Management-System',
-  },
-  {
-    title: 'Finance Tracker',
-    summary: 'Personal finance tracker with both GUI and CLI, supporting full CRUD and categorised expenses.',
-    stack: ['Python', 'Tkinter'],
-    code: 'https://github.com/Joshfd05/Finance-Tracker-GUI-Version-',
-  },
-  {
-    title: 'Shopping Webpage',
-    summary: 'Responsive website built from scratch with semantic HTML, CSS and vanilla JavaScript.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    code: 'https://github.com/Joshfd05/Shopping-Page',
   },
 ];
 

@@ -16,8 +16,12 @@ import SectionHeading from './SectionHeading.astro';
             class="card flex flex-col rounded-[28px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_44px_-20px_rgba(0,0,0,0.8),inset_0_0_0_1px_rgba(220,185,138,0.25)] md:p-7"
             data-reveal
           >
-            <div class="flex items-center justify-between text-xs text-muted">
-              <span class="tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+            <div class="flex items-center justify-between gap-3 text-xs text-muted">
+              <span>
+                <span class="tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span class="mx-1.5 text-line" aria-hidden="true">/</span>
+                {project.type}
+              </span>
               {project.live && (
                 <span class="flex items-center gap-1.5 text-accent">
                   <span class="size-1.5 rounded-full bg-accent" aria-hidden="true" />
@@ -58,6 +62,7 @@ import SectionHeading from './SectionHeading.astro';
                   <span class="sr-only">for {project.title}</span>
                 </a>
               )}
+              {!project.code && !project.live && project.note && <span class="text-muted">{project.note}</span>}
             </div>
           </li>
         ))
