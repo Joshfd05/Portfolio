@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { music, sections } from '../data/portfolio';
 import Panel from './Panel.astro';
 import SectionHeading from './SectionHeading.astro';
@@ -8,8 +9,37 @@ import SectionHeading from './SectionHeading.astro';
   <div class="px-6 py-20 md:px-12 md:py-28">
     <SectionHeading {...sections.music} />
 
-    <div class="mx-auto mt-14 grid max-w-5xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
-      <p class="text-base leading-relaxed text-ink-soft md:text-lg" data-reveal>{music.intro}</p>
+    <div class="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-8">
+      <div class="relative" data-reveal>
+        <ul
+          class="grid grid-flow-dense auto-rows-[120px] grid-cols-2 gap-2 sm:auto-rows-[150px] sm:grid-cols-4 lg:absolute lg:inset-0 lg:grid-rows-3"
+        >
+          {
+            music.gallery.map((photo) => (
+              <li
+                class:list={[
+                  'group relative overflow-hidden rounded-2xl bg-card',
+                  photo.size === 'tall' && 'row-span-2',
+                  photo.size === 'wide' && 'col-span-2',
+                ]}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  widths={[400, 800]}
+                  sizes={photo.size === 'wide' ? '(min-width: 640px) 33vw, 100vw' : '(min-width: 640px) 17vw, 50vw'}
+                  class="size-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                {photo.caption && (
+                  <span class="pointer-events-none absolute inset-x-2 bottom-2 translate-y-1 rounded-xl bg-canvas/75 px-3 py-2 text-xs text-ink opacity-0 backdrop-blur-sm transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    {photo.caption}
+                  </span>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
 
       <ol class="space-y-3">
         {

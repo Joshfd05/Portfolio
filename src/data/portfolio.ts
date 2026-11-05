@@ -18,6 +18,15 @@ import uowLogo from '../assets/images/UOW.png';
 import iitLogo from '../assets/images/IIT.png';
 import jvcLogo from '../assets/images/JVC.png';
 import applovaLogo from '../assets/images/applova.png';
+import musicPhoto1 from '../assets/images/music/placeholder-1.jpg';
+import musicPhoto2 from '../assets/images/music/placeholder-2.jpg';
+import musicPhoto3 from '../assets/images/music/placeholder-3.jpg';
+import musicPhoto4 from '../assets/images/music/placeholder-4.jpg';
+import musicPhoto5 from '../assets/images/music/placeholder-5.jpg';
+import musicPhoto6 from '../assets/images/music/placeholder-6.jpg';
+import musicPhoto7 from '../assets/images/music/placeholder-7.jpg';
+import musicPhoto8 from '../assets/images/music/placeholder-8.jpg';
+import musicPhoto9 from '../assets/images/music/placeholder-9.jpg';
 
 import type { IconName } from '../lib/icons';
 
@@ -63,6 +72,14 @@ export type Education = {
   logoOnDark?: boolean;
 };
 
+export type GalleryPhoto = {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  /** Tile shape in the mosaic; defaults to a single square. */
+  size?: 'tall' | 'wide';
+};
+
 export type MusicItem = {
   title: string;
   period: string;
@@ -84,7 +101,7 @@ export const profile = {
 };
 
 export const socials: SocialLink[] = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joshh-fernando/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joshhua/' },
   { label: 'GitHub', href: 'https://github.com/Joshfd05' },
   { label: 'Instagram', href: 'https://www.instagram.com/jo______ooo/' },
 ];
@@ -268,8 +285,18 @@ export const education: Education[] = [
 ];
 
 export const music = {
-  intro:
-    'From classical exams to live gigs, music has been a constant since childhood. It taught me to practise deliberately, play as part of an ensemble and perform under pressure — habits I bring to every project.',
+  /** Placeholders: swap the files in src/assets/images/music for real photos. */
+  gallery: [
+    { src: musicPhoto1, alt: 'Live gig', caption: 'Live gig' },
+    { src: musicPhoto2, alt: 'Performing on stage', caption: 'Performing on stage', size: 'tall' },
+    { src: musicPhoto3, alt: 'Solo set with guitar', caption: 'Solo set with guitar', size: 'wide' },
+    { src: musicPhoto4, alt: 'School brass band', caption: 'School brass band' },
+    { src: musicPhoto5, alt: 'Clarinet', caption: 'Clarinet' },
+    { src: musicPhoto6, alt: 'Classical guitar', caption: 'Classical guitar' },
+    { src: musicPhoto7, alt: 'Music competition', caption: 'Music competition' },
+    { src: musicPhoto8, alt: 'Rehearsal', caption: 'Rehearsal' },
+    { src: musicPhoto9, alt: 'Evening performance', caption: 'Evening performance', size: 'wide' },
+  ] satisfies GalleryPhoto[],
   items: [
     {
       title: 'Solo performer - guitar & vocals',
