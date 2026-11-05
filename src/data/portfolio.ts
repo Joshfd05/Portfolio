@@ -72,8 +72,8 @@ export const profile = {
   name: 'Joshua Fernando',
   role: 'Software Engineering Student',
   email: 'fernandojoshua102@gmail.com',
-  /** Put the PDF in /public and set this to e.g. '/Joshua-Fernando-CV.pdf'. */
-  cvUrl: null as string | null,
+  /** Served from /public — the PDF must exist at public/Joshua-Fernando-CV.pdf. */
+  cvUrl: '/Joshua-Fernando-CV.pdf',
   headshot,
 };
 

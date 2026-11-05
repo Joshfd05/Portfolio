@@ -8,25 +8,21 @@ import TwoTone from './TwoTone.astro';
 ---
 
 <Panel id="top" layer={8} class="hero-glow">
-  <header class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 pt-5 md:px-8 md:pt-7">
-    <div class="flex items-center gap-2">
-      <a href={`mailto:${profile.email}`} class="mr-1 text-xs text-ink-soft transition hover:text-ink">
+  <header class="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 px-5 pt-5 md:px-8 md:pt-7">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+      <a
+        href={`mailto:${profile.email}`}
+        class="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition hover:text-accent md:text-base"
+      >
+        <Icon name="mail" class="size-4 md:size-5" />
         {profile.email}
       </a>
-      <button type="button" class="pill cursor-pointer" data-copy={profile.email} aria-label="Copy email address">
-        <Icon name="copy" class="size-3.5" />
-        <span data-copy-label>Copy</span>
-      </button>
-      {
-        profile.cvUrl && (
-          <a href={profile.cvUrl} class="pill" target="_blank" rel="noopener">
-            <Icon name="file" class="size-3.5" />
-            CV
-          </a>
-        )
-      }
+      <a href={profile.cvUrl} download class="pill px-5 py-2 text-sm md:px-6 md:py-2.5">
+        <Icon name="download" class="size-4" />
+        Download CV
+      </a>
     </div>
-    <SocialLinks />
+    <SocialLinks size="lg" />
   </header>
 
   <div class="flex flex-col items-center px-5 pt-16 pb-24 text-center md:pt-24 md:pb-32">
@@ -34,16 +30,20 @@ import TwoTone from './TwoTone.astro';
       <Image
         src={profile.headshot}
         alt={`Portrait of ${profile.name}`}
-        width={208}
-        height={208}
+        width={416}
+        height={416}
         loading="eager"
-        class="size-24 rounded-full object-cover ring-4 ring-accent/30 md:size-26"
+        class="size-36 rounded-full object-cover shadow-[0_24px_60px_-24px_rgba(220,185,138,0.45)] ring-[5px] ring-accent/30 sm:size-44 md:size-52"
       />
-      <span class="pill absolute top-2 left-[78%] rotate-[8deg] whitespace-nowrap">{hero.nameTag}</span>
+      <span
+        class="pill absolute -bottom-4 left-1/2 -translate-x-1/2 -rotate-3 px-5 py-2 text-sm whitespace-nowrap md:top-6 md:bottom-auto md:left-[84%] md:translate-x-0 md:rotate-[8deg] md:px-6 md:py-2.5 md:text-base"
+      >
+        {hero.nameTag}
+      </span>
     </div>
 
     <h1
-      class="mt-8 max-w-3xl text-[2.6rem] leading-[1.05] font-medium tracking-tight text-balance sm:text-5xl md:text-[4rem]"
+      class="mt-12 max-w-3xl text-[2.6rem] leading-[1.05] font-medium tracking-tight text-balance sm:text-5xl md:text-[4rem]"
       data-reveal
     >
       <TwoTone segments={hero.headline} />
