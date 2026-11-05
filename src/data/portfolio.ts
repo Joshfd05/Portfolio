@@ -84,7 +84,7 @@ export const profile = {
 };
 
 export const socials: SocialLink[] = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joshua-fernando-590653332/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joshh-fernando/' },
   { label: 'GitHub', href: 'https://github.com/Joshfd05' },
   { label: 'Instagram', href: 'https://www.instagram.com/jo______ooo/' },
 ];
