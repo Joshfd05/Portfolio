@@ -85,12 +85,6 @@
       --panel-radius: var(--radius-panel-lg);
     }
   }
-
-  .hero-glow {
-    background-image:
-      radial-gradient(60% 55% at 50% 0%, rgba(220, 185, 138, 0.14), transparent 70%),
-      radial-gradient(40% 40% at 85% 100%, rgba(168, 116, 63, 0.1), transparent 70%);
-  }
 }
 
 /* Scroll reveal — only hidden when JS is available to reveal it again. */

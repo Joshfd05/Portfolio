@@ -18,8 +18,8 @@ import uowLogo from '../assets/images/UOW.png';
 import iitLogo from '../assets/images/IIT.png';
 import jvcLogo from '../assets/images/JVC.png';
 import applovaLogo from '../assets/images/applova.png';
-import musicPhoto1 from '../assets/images/music/placeholder-1.jpg';
-import musicPhoto2 from '../assets/images/music/placeholder-2.jpg';
+import musicPhoto1 from '../assets/images/music/gallery1.jpeg';
+import musicPhoto2 from '../assets/images/music/gallery1.jpeg';
 import musicPhoto3 from '../assets/images/music/placeholder-3.jpg';
 import musicPhoto4 from '../assets/images/music/placeholder-4.jpg';
 import musicPhoto5 from '../assets/images/music/placeholder-5.jpg';
@@ -107,15 +107,8 @@ export const socials: SocialLink[] = [
 ];
 
 export const hero = {
-  nameTag: 'Joshua Fernando 👋',
-  headline: [
-    { text: 'Crafting software,' },
-    { text: 'web apps, and', highlight: true },
-    { text: 'live music.' },
-  ] satisfies Segment[],
-  intro:
-    'Software Engineering student at the University of Westminster, building full-stack and mobile applications.',
-  cta: { label: 'View my work', href: '#work' },
+  nameLines: ['Joshua', 'Fernando'],
+  tagline: 'Crafting software, web apps, and live music.',
 };
 
 /**
@@ -264,13 +257,13 @@ export const education: Education[] = [
     qualification: 'BEng (Hons) Software Engineering',
     period: 'In progress',
     detail:
-      'Key projects include a real-time event ticketing system, a student management system and a finance tracker.',
+      'Currently in my final year, working on Final Year Project (FYP), focused on designing and evaluating an explainable, real-time, and domain-aligned IoT Network Intrusion Detection System.',
     logo: uowLogo,
     logoOnDark: true,
   },
   {
     institution: 'Informatics Institute of Technology',
-    qualification: 'Foundation Certificate in Higher Education — IT',
+    qualification: 'Foundation Certificate in Higher Education - IT',
     period: '2022',
     detail: 'Completed with a Distinction.',
     logo: iitLogo,

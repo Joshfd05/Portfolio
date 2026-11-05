@@ -3,15 +3,18 @@ import { socials } from '../data/portfolio';
 
 interface Props {
   size?: 'sm' | 'lg';
+  /** `light` is for text sitting on a photo. */
+  tone?: 'default' | 'light';
   class?: string;
 }
 
-const { size = 'sm', class: className } = Astro.props;
+const { size = 'sm', tone = 'default', class: className } = Astro.props;
 ---
 
 <ul
   class:list={[
-    'flex items-center text-ink-soft',
+    'flex items-center',
+    tone === 'light' ? 'text-white' : 'text-ink-soft',
     size === 'lg' ? 'gap-3 text-sm font-medium md:text-base' : 'gap-2 text-xs',
     className,
   ]}
@@ -19,8 +22,17 @@ const { size = 'sm', class: className } = Astro.props;
   {
     socials.map((social, i) => (
       <li class:list={['flex items-center', size === 'lg' ? 'gap-3' : 'gap-2']}>
-        {i > 0 && <span class="text-muted" aria-hidden="true">/</span>}
-        <a href={social.href} target="_blank" rel="noopener noreferrer" class="transition hover:text-accent">
+        {i > 0 && (
+          <span class={tone === 'light' ? 'text-white/45' : 'text-muted'} aria-hidden="true">
+            /
+          </span>
+        )}
+        <a
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={['transition', tone === 'light' ? 'hover:text-white/70' : 'hover:text-accent']}
+        >
           {social.label}
         </a>
       </li>
