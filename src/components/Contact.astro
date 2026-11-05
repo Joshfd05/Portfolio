@@ -23,10 +23,10 @@ const year = new Date().getFullYear();
       <p class="mt-4 max-w-sm text-sm text-muted md:text-base">{contact.intro}</p>
     </div>
 
-    <div class="mt-14 w-full max-w-4xl">
+    <div class="mt-14 w-full max-w-5xl">
       <LabelDivider label={contact.servicesLabel} />
 
-      <ul class="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+      <ul class="mt-12 grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
         {
           services.map((service) => (
             <li class="flex flex-col items-center" data-reveal>

@@ -156,6 +156,11 @@ export const services: Service[] = [
     description: 'Cross-platform apps with Flutter and Firebase, from auth to real-time chat.',
   },
   {
+    icon: 'briefcase',
+    title: 'Custom Business Solutions',
+    description: 'Tailored web and mobile apps for real businesses, from gym tracking to stock, billing and route management.',
+  },
+  {
     icon: 'music',
     title: 'Music & Performance',
     description: 'Guitarist and vocalist performing live gigs at pubs, hotels, restaurants and events.',
@@ -243,7 +248,7 @@ export const education: Education[] = [
     institution: 'St. Joseph Vaz College, Wennappuwa',
     qualification: 'GCE Ordinary Level',
     period: '2021',
-    detail: '9 A passes, including ICT, Mathematics, Science and Western Music.',
+    detail: '9 A passes, including ICT, Mathematics, Science and Western Music while doing extra curricular activities too.',
     logo: jvcLogo,
   },
 ];
