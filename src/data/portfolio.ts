@@ -16,6 +16,7 @@ import headshot from '../assets/images/headshot.jpg';
 import uowLogo from '../assets/images/UOW.png';
 import iitLogo from '../assets/images/IIT.png';
 import jvcLogo from '../assets/images/JVC.png';
+import applovaLogo from '../assets/images/applova.png';
 
 import type { IconName } from '../lib/icons';
 
@@ -31,12 +32,12 @@ export type Service = { icon: IconName; title: string; description: string };
 export type Experience = {
   role: string;
   company: string;
+  logo?: ImageMetadata;
   period: string;
   location?: string;
+  summary?: string;
   points: string[];
   stack?: string[];
-  /** Shows a "details coming soon" badge until real content is added. */
-  placeholder?: boolean;
 };
 
 export type Project = {
@@ -173,15 +174,17 @@ export const services: Service[] = [
 export const experience: Experience[] = [
   {
     role: 'Software Engineering Intern',
-    company: 'Company name',
-    period: 'Dates',
-    location: 'Location',
+    company: 'Applova (Pvt) Ltd',
+    logo: applovaLogo,
+    period: 'Jul 2025 — Jun 2026',
+    location: 'Sri Lanka',
+    summary: 'Part of the core engineering team building SaaS products for the restaurant industry.',
     points: [
-      'What you built or improved, and the impact it had.',
-      'Technologies, tools and practices you used day to day.',
-      'A result you are proud of — numbers help if you have them.',
+      'Shipped full-stack features across Merchant Web, Admin Web, POS and self-ordering Kiosk apps — from UI and REST APIs to database changes and production deployments.',
+      'Built merchant-facing enhancements, including CRM opt-out controls and promo-code channel visibility.',
+      'Co-built an internal Customer Success dashboard from the ground up to flag at-risk merchants, with data visualisation, Zoho CRM and Desk integrations, automated reports and real-time Google Chat alerts.',
     ],
-    placeholder: true,
+    stack: ['Java', 'Spring Boot', 'React', 'SQL', 'REST APIs', 'OAuth 2.0', 'Zoho CRM & Desk APIs', 'Google Cloud', 'Git', 'Jira'],
   },
 ];
 
