@@ -18,15 +18,15 @@ import uowLogo from '../assets/images/UOW.png';
 import iitLogo from '../assets/images/IIT.png';
 import jvcLogo from '../assets/images/JVC.png';
 import applovaLogo from '../assets/images/applova.png';
-import musicPhoto1 from '../assets/images/music/gallery1.jpeg';
+import musicPhoto1 from '../assets/images/music/gallery2.jpeg';
 import musicPhoto2 from '../assets/images/music/gallery1.jpeg';
-import musicPhoto3 from '../assets/images/music/placeholder-3.jpg';
-import musicPhoto4 from '../assets/images/music/placeholder-4.jpg';
-import musicPhoto5 from '../assets/images/music/placeholder-5.jpg';
-import musicPhoto6 from '../assets/images/music/placeholder-6.jpg';
-import musicPhoto7 from '../assets/images/music/placeholder-7.jpg';
-import musicPhoto8 from '../assets/images/music/placeholder-8.jpg';
-import musicPhoto9 from '../assets/images/music/placeholder-9.jpg';
+import musicPhoto3 from '../assets/images/music/gallery7.png';
+import musicPhoto4 from '../assets/images/music/gallery8.jpeg';
+import musicPhoto5 from '../assets/images/music/gallery6.jpeg';
+import musicPhoto6 from '../assets/images/music/gallery5.jpeg';
+import musicPhoto7 from '../assets/images/music/gallery10.jpeg';
+import musicPhoto8 from '../assets/images/music/gallery3.jpeg';
+import musicPhoto9 from '../assets/images/music/gallery4.jpeg';
 
 import type { IconName } from '../lib/icons';
 
