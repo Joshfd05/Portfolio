@@ -21,9 +21,9 @@ import applovaLogo from '../assets/images/applova.png';
 import musicPhoto1 from '../assets/images/music/gallery2.jpeg';
 import musicPhoto2 from '../assets/images/music/gallery1.jpeg';
 import musicPhoto3 from '../assets/images/music/gallery7.png';
-import musicPhoto4 from '../assets/images/music/gallery8.jpeg';
+import musicPhoto4 from '../assets/images/music/gallery5.jpeg';
 import musicPhoto5 from '../assets/images/music/gallery6.jpeg';
-import musicPhoto6 from '../assets/images/music/gallery5.jpeg';
+import musicPhoto6 from '../assets/images/music/gallery9.jpeg';
 import musicPhoto7 from '../assets/images/music/gallery10.jpeg';
 import musicPhoto8 from '../assets/images/music/gallery3.jpeg';
 import musicPhoto9 from '../assets/images/music/gallery4.jpeg';
@@ -75,7 +75,6 @@ export type Education = {
 export type GalleryPhoto = {
   src: ImageMetadata;
   alt: string;
-  caption?: string;
   /** Tile shape in the mosaic; defaults to a single square. */
   size?: 'tall' | 'wide';
 };
@@ -280,15 +279,15 @@ export const education: Education[] = [
 export const music = {
   /** Placeholders: swap the files in src/assets/images/music for real photos. */
   gallery: [
-    { src: musicPhoto1, alt: 'Live gig', caption: 'Live gig' },
-    { src: musicPhoto2, alt: 'Performing on stage', caption: 'Performing on stage', size: 'tall' },
-    { src: musicPhoto3, alt: 'Solo set with guitar', caption: 'Solo set with guitar', size: 'wide' },
-    { src: musicPhoto4, alt: 'School brass band', caption: 'School brass band' },
-    { src: musicPhoto5, alt: 'Clarinet', caption: 'Clarinet' },
-    { src: musicPhoto6, alt: 'Classical guitar', caption: 'Classical guitar' },
-    { src: musicPhoto7, alt: 'Music competition', caption: 'Music competition' },
-    { src: musicPhoto8, alt: 'Rehearsal', caption: 'Rehearsal' },
-    { src: musicPhoto9, alt: 'Evening performance', caption: 'Evening performance', size: 'wide' },
+    { src: musicPhoto1, alt: 'Live gig' },
+    { src: musicPhoto2, alt: 'Performing on stage', size: 'tall' },
+    { src: musicPhoto3, alt: 'Solo set with guitar', size: 'wide' },
+    { src: musicPhoto4, alt: 'School brass band' },
+    { src: musicPhoto5, alt: 'Clarinet' },
+    { src: musicPhoto6, alt: 'Classical guitar' },
+    { src: musicPhoto7, alt: 'Music competition' },
+    { src: musicPhoto8, alt: 'Rehearsal' },
+    { src: musicPhoto9, alt: 'Evening performance', size: 'wide' },
   ] satisfies GalleryPhoto[],
   items: [
     {
