@@ -13,7 +13,7 @@ import {
   siTypescript,
 } from 'simple-icons';
 
-import headshot from '../assets/images/headshot.jpg';
+import headshot from '../assets/images/headshot1.jpg';
 import uowLogo from '../assets/images/UOW.png';
 import iitLogo from '../assets/images/IIT.png';
 import jvcLogo from '../assets/images/JVC.png';
